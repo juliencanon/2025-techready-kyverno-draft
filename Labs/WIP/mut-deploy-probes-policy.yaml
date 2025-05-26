@@ -1,0 +1,30 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: add-health-probes
+spec:
+  rules:
+  - name: add-health-probes
+    match:
+      resources:
+        kinds:
+        - Deployment
+    mutate:
+      patchStrategicMerge:
+        spec:
+          template:
+            spec:
+              containers:
+              - (name): "*"
+                livenessProbe:
+                  +(httpGet):
+                    path: /health
+                    port: 8080
+                  +(initialDelaySeconds): 30
+                  +(periodSeconds): 10
+                readinessProbe:
+                  +(httpGet):
+                    path: /ready
+                    port: 8080
+                  +(initialDelaySeconds): 5
+                  +(periodSeconds): 5

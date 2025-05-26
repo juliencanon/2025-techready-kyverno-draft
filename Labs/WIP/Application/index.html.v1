@@ -1,0 +1,16 @@
+<HTML>
+  <HEADER>
+    <meta charset="utf-8">
+    <TITLE>My Enterprise</TITLE>
+    <style>
+      body {
+         background-position:center;
+         background-image:url(Enterprise.png) no-repeat;
+         background-image: url('Enterprise.png') no-repeat;
+      }
+    </style>
+  </HEADER>
+  <BODY>
+    TEST
+  </BODY>
+</HTML>
