@@ -18,16 +18,24 @@ Notes:
 <!-- .slide: data-background="./assets/techready/bkgnd.png"-->
 ###  Exemples de référentiels à traduire sur Kubernetes :
 
-- NIST SP 800-190 (Application Container Security Guide)
+- NIST SP 800-190
+- CIS Kubernetes Benchmark
+- ISO 27001 
+- SOC 2 
+- PCI DSS 
+- HDS
+- MITTR&TTack
+
+Notes: 
+- NIST SP 800-190 (Application Container Security Guide) document de 63 pages sur sec OS et images
 - CIS Kubernetes Benchmark (Center for Internet Security)
 - ISO 27001 (Système de management de la sécurité informatique)
 - SOC 2 (Service Organization Control 2)
 - PCI DSS (Payment Card Data Security Standard)
+- HDS
+- MITTR&TTack
 - ... Vos propres référentiels (CISO, Architecture C4, ...)
 <!-- .element: class="list-fragment" -->
-
-Notes: 
-- NIST : document de 63 pages sur sec OS et images
 
 ##==##
 <!-- .slide: data-background="./assets/techready/bkgnd.png"-->
