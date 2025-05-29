@@ -5,6 +5,7 @@ function schoolSlides() {
   return [
     "00_Intro.md",
     "02_Speaker.md",
+    "03_40m.md",
     "05_Contexte.md",
     "07_Conformite.md",
     "10_Retour_sur_k8s.md",

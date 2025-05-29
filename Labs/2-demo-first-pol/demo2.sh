@@ -10,31 +10,36 @@ pe 'kubectl get namespace'
 pe 'kubectl create -f appli-ns.yaml'
 pe 'kubectl get namespace'
 
-pe 'cat appli-pod-latest.yaml'
+pe 'yq . < appli-pod-latest.yaml'
 pe 'kubectl create -f appli-pod-latest.yaml'
 pe 'kubectl get pods -n appli'
 pe 'kubectl get pods -n appli'
 
+clean
 echo "Nettoyage"
+echo ""
 pe 'kubectl delete -f appli-pod-latest.yaml'
 pe 'kubectl get pods -n appli'
 
-pe 'cat kyv-pol-disable-latest.yaml'
+clean
+echo "Ajoutons une policy"
+echo ""
+pe 'yq . < kyv-pol-disable-latest.yaml'
 pe 'kubectl create -f kyv-pol-disable-latest.yaml'
 pe 'kubectl get clusterpolicy'
 
 pe 'kubectl create -f appli-pod-latest.yaml'
 pe 'kubectl get pods -n appli'
 
-pe 'cat appli-pod-version.yaml'
+pe 'yq . < appli-pod-version.yaml'
 pe 'kubectl create -f appli-pod-version.yaml'
 pe 'kubectl get pods -n appli'
 pe 'kubectl get pods -n appli'
 
 echo '💡Bonus 😍'
-pe 'cat appli-deployment-version.yaml'
+pe 'yq . < appli-deployment-version.yaml'
 pe 'kubectl create -f appli-deployment-version.yaml'
-pe 'kubectl describe clusterpolicy disallow-latest-tag'
+pe 'kubectl get clusterpolicy disallow-latest-tag -o yaml | yq .'
 
-pei 'exit'
+exit
 

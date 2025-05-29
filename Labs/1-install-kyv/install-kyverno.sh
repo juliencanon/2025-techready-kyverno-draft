@@ -18,5 +18,5 @@ pe 'kubectl get deployment -n kyverno'
 pe 'kubectl get pods -n kyverno'
 pe 'kubectl get pods -n kyverno'
 
-pei 'exit'
+exit
 
